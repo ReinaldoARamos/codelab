@@ -3,6 +3,8 @@ import { Nunito } from "next/font/google";
 
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 
 const nunito = Nunito({
   variable: "--font-sans",
@@ -19,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider localization={ptBR}>
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={cn(nunito.variable, "antialiased font-sans dark")}>
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
