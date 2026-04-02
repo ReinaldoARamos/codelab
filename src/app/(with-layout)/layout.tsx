@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
           
             </div>
 
-            <Link href={"/auth/sing-in"}>
+            <Link href={"/auth/sign-in"}>
             <Button size="sm">
                 Entrar
                 <LogIn />
