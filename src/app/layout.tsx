@@ -4,7 +4,6 @@ import { Nunito } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 
-
 const nunito = Nunito({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -21,8 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={cn(nunito.variable, "antialiased font-sans dark" )}>
-        <h1>LAYOUT</h1>
+      <body className={cn(nunito.variable, "antialiased font-sans dark")}>
         {children}
       </body>
     </html>
