@@ -9,9 +9,9 @@ export const NavUser = () => {
       <SidebarMenuItem>
         <div className="p-2">
           <Link href={"/auth/sign-in"} passHref className="w-full">
-            <LogIn />
+         
             <Button size="sm" variant="outline" className="w-full">
-              {" "}
+                <LogIn />
               Entrar
             </Button>
           </Link>

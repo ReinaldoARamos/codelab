@@ -5,7 +5,7 @@ export default function Home() {
   return (
   <div>
     <h1>codelab</h1>
-  <Button>Click me</Button>
+  <Button className="w-full">Click me</Button>
   </div>
   );
 }

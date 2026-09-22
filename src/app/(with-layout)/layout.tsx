@@ -31,7 +31,7 @@ export default function Layout({ children }: LayotProps) {
             <SearchInput />
           </div>
 
-          <Link href={"/auth/sing-in"}>
+          <Link href={"/auth/sign-in"}>
             <Button size="sm">
               <LogIn />
               Entrar
