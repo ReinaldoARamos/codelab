@@ -1,3 +1,4 @@
+"use client"
 import { AppSidebar } from "@/components/shared/app-siderbar";
 
 import { SearchInput } from "@/components/shared/SearchInput";
@@ -9,6 +10,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { useUser } from "@clerk/nextjs";
 
 import { LogIn } from "lucide-react";
 
@@ -21,6 +23,7 @@ type LayotProps = {
 };
 
 export default function Layout({ children }: LayotProps) {
+  const user = useUser()
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -31,12 +34,14 @@ export default function Layout({ children }: LayotProps) {
             <SearchInput />
           </div>
 
-          <Link href={"/auth/sign-in"}>
-            <Button size="sm">
-              <LogIn />
-              Entrar
-            </Button>
-          </Link>
+{!user.user ? (
+  <Link href="/auth/sign-in">
+    <Button size="sm">
+      <LogIn />
+      Entrar
+    </Button>
+  </Link>
+) : null}
         </header>
 
         <div className="flex-1 flex flex-col gap-6 p-6 overflow-auto ">{children}</div>
